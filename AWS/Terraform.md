@@ -160,6 +160,8 @@ output "vpc_name" {
   value = data.aws_vpc.existing_vpc.name
 }
 ```
+![Pasted image 20240729143838](https://github.com/user-attachments/assets/649da7c0-4363-491a-be83-7b1be718c90e)
+
 Output values help in verifying the values of infrastructure components or passing them to other Terraform configurations.
 ### State Management
 Terraform's state management is crucial for tracking the resources it manages. The state file records information about the resources and their configuration, allowing Terraform to determine the current state of the infrastructure and plan updates accordingly.
@@ -168,12 +170,13 @@ In Terraform, the **state** represents the current configuration and status of i
 1. `terraform.tfstate`: This JSON file stores the current state of the infrastructure managed by Terraform, including resource IDs, configuration values, and status. It can be saved locally or in remote storage.
 2. `terraform.tfstate.backup`: A backup of the state file created each time `terraform apply` is run. It helps in recovering previous states if needed.
 3. `.terraform.lock.hcl`: Introduced in Terraform 0.14, this file locks the versions of modules and plugins used, ensuring consistent environment setup across different systems.
-	![[Pasted image 20240729154214.png]]
+	![Pasted image 20240729143851](https://github.com/user-attachments/assets/e11605ad-dfa9-4081-b13a-e5b16ce6bf69)
 
 State storage is where the Terraform state file is kept. This can be on a local disk or a remote location like S3 or Terraform Cloud.
 - **Local State**: The state file is stored locally on disk, which is suitable for personal projects or small-scale environments.
 - **Remote State**: Ideal for collaborative environments, storing the state remotely allows multiple users to work together. 
-  ![[Pasted image 20240729154544.png]]
+  ![Pasted image 20240729143911](https://github.com/user-attachments/assets/7c8ed497-3895-48cc-9eb1-aa2845f9c532)
+
   It includes mechanisms to avoid conflicts, such as locking, which prevents concurrent operations that might lead to inconsistent states.
   
   Example of remote state configuration using S3 and DynamoDB for locking:
@@ -186,21 +189,26 @@ State storage is where the Terraform state file is kept. This can be on a local 
 	  profile = "profile"
 	}
 	```
-	![[Pasted image 20240729154558.png]]
+	![Pasted image 20240729143922](https://github.com/user-attachments/assets/6511d87f-c5cc-4570-8ff6-d1d7d9f8bb3b)
+
 
 **State Management** involves handling the state file and keeping track of changes. Terraform uses the state file to compare the current infrastructure with the desired configuration defined in the code. Basic Workflow:
 - Write and define resources in the code.
 - `terraform init`: Initializes the project, installs modules, and configures the state storage.
-	![[Pasted image 20240729155045.png]]
+	![Pasted image 20240729143935](https://github.com/user-attachments/assets/1b56c246-5a34-4034-b7f2-99b7e33493a2)
+
 - `terraform plan`: Creates an execution plan to show what changes will be made to match the desired state.
-	![[Pasted image 20240729155055.png]]
+	![Pasted image 20240729143943](https://github.com/user-attachments/assets/edeb1773-0030-4988-9de2-9cafd96ee802)
+
 - `terraform apply`: Applies the planned changes to update the infrastructure.
-	![[Pasted image 20240729155105.png]]
+	![Pasted image 20240729143951](https://github.com/user-attachments/assets/eab40bf7-4c97-4400-8a4e-b60df7828854)
+
 - The state file is updated to reflect these changes.
 - Repeat the `plan` and `apply` cycle as needed for ongoing changes.
 State management is a key feature of Terraform, ensuring that infrastructure remains consistent with the code and stable over time. Proper management and protection of the state file are crucial to avoid discrepancies and potential issues in infrastructure management.
 ### Conclusion
-![[Pasted image 20240729155116.png]]
+![Pasted image 20240729155116](https://github.com/user-attachments/assets/da5ce17c-eb8b-4e09-a146-5ddfa878ce4c)
+
 This post has explored how Terraform enables Infrastructure as Code (IaC) for efficient infrastructure management. Despite its learning curve, Terraform's ability to automate and simplify infrastructure management is compelling. Utilizing Terraform for managing multiple cloud services can greatly enhance efficiency and consistency. Additionally, Terraform's official documentation is an excellent resource for learning and troubleshooting. I hope this post helps you to configure infrastructure.
 - [Files and Directories - Configuration Language | Terraform | HashiCorp Developer](https://developer.hashicorp.com/terraform/language/files)
 - [Terraform Registry](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
