@@ -46,8 +46,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global user.name 'thinkjin99'
-          git config --global user.email 'mjin1789@gmail.com'
+          git config --global user.name 'JjungminLee'
+          git config --global user.email 'julie0964@naver.com'
           git add .
           git commit -m "Processed Markdown files using obs3dian" || echo "No changes to commit"
 
