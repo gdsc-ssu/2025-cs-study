@@ -29,7 +29,10 @@ sigset(&set);
 - block : 시그널을 보내도 안받겠다
 - 차단된 신호는 즉시 처리되지 않고 대기 상태로 유지
 - 후술할 sigprocmask 함수들을 사용해 block set을 설정하거나 수정 가능
-- 특정 신호를 일시적으로 무시하거나 처리하지 않도록 설정시 사용
+- 특정 신호를 일시적으로 무시하거나 처리하지 않도록 설정시 사용  
+  🧩 block된 시그널들은 블록해제 될 동안 busy-waiting할까?
+  - block된 시그널은 sigprocmask를 통해 블록이 해제되기 까지 기다려야
+  - busy-waiting처럼 CPU를 의미없이 소비하면서 시그널을 확인하는게 아닌 기다리는 동안 다른 일을 하거나 대기가능!
 
 ```cpp
 #include <signal.h>
@@ -95,6 +98,12 @@ int sigprocmask(int how,sigset_t *newset,sigset_t *oldset);
 - 시그널 발생 시 나중에 시그널 처리하기 위해 시그널을 블록시킨다.
 - 특정 작업 실행하기 위해 시그널을 블록시키고, 특정 작업 실행 마치고 난 후 블록해제하는데 사용
 
+🧩 시그널마스크는 뭘까?
+
+- mask == block
+- 시그널 마스크 => 처리할 시그널을 거르는 필터
+- sigrpocmask => 필터의 상태를 변경해 시그널을 프로세스가 처리 가능하게 하거나 블락하게 함
+
 **how에 들어가는 인자**
 
 | 이름        | 역할                                                                                                          |
@@ -142,6 +151,54 @@ if (sigprocmask(SIG_BLOCK, &set, NULL) == -1) {
 }
 
 ```
+
+### 예제2
+
+```cpp
+#include <stdio.h>
+#include <signal.h>
+#include <unistd.h>
+
+// 시그널이 처리되었는지 확인하기 위한 전역 변수
+volatile sig_atomic_t gotSIGINT = 0;
+
+// SIGINT(CTRL + C) 시그널 핸들러
+void handler(int signo) {
+if (signo == SIGINT) {
+gotSIGINT = 1;
+write(STDOUT_FILENO, "\nSIGINT Received\n", 17); // 비동기 시그널 핸들러 내 출력
+}
+}
+
+int main() {
+// 1. SIGINT에 대한 시그널 핸들러 등록
+struct sigaction act;
+act.sa_handler = handler;
+sigemptyset(&act.sa_mask);
+act.sa_flags = 0;
+sigaction(SIGINT, &act, NULL);
+
+    // 2. sigsuspend()가 대기할 시그널 집합 구성
+    //    모든 시그널을 막은 뒤(SIG_FILLSET), SIGINT만 허용하도록 제외
+    sigset_t set;
+    sigfillset(&set);
+    sigdelset(&set, SIGINT);
+
+    // 3. SIGINT을 기다리는 루프
+    while (!gotSIGINT) {
+        printf("SIGINT 대기 중...\n");
+        // sigsuspend()는 지정한 시그널 집합에 들어오지 않는 시그널이 발생할 때까지 실행을 멈춤.
+        // 여기서는 SIGINT가 들어오면 핸들러 호출 후 반환.
+        sigsuspend(&set);
+    }
+
+    printf("SIGINT 처리 완료. 프로그램 종료.\n");
+    return 0;
+
+}
+```
+
+1.시그널 핸들러를 먼저 만든다. 2. fillset으로 모든 시그널 블록킹 3. delset으로 블록킹 안할 시그널 추려내기 4. SIGINT 시그널 발생 전까지 while 무한루프에 갇혀있음(블록킹 당하기때문!) 5. SIGINT 발생 후 -> while문 탈출!
 
 ### ⭐️ sigpending
 
