@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OS/OS 개론(1).md",
+                "file": "OS/OS 개론(2).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OS 개론(1)"
+              "title": "OS 개론(2)"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OS/OS 개론(1).md",
+                "file": "OS/OS 개론(2).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "OS 개론(1)의 백링크"
+              "title": "OS 개론(2)의 백링크"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OS/OS 개론(1).md",
+                "file": "OS/OS 개론(2).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "OS 개론(1)의 나가는 링크"
+              "title": "OS 개론(2)의 나가는 링크"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OS/OS 개론(1).md"
+                "file": "OS/OS 개론(2).md"
               },
               "icon": "lucide-list",
-              "title": "OS 개론(1) 개요"
+              "title": "OS 개론(2) 개요"
             }
           }
         ]
@@ -164,6 +164,43 @@
   },
   "active": "21fcf842d395c9fd",
   "lastOpenFiles": [
-    "OS/OS 개론(1).md"
+    "OS/OS 개론(1).md",
+    "OS/OS 개론(2).md",
+    "Pasted image 20250106114208.png",
+    "Pasted image 20250106112629.png",
+    "config.py",
+    "Network/osi7계층.md",
+    "Network/ny_http_msg.png",
+    "Network/http_request_message.md",
+    "Network/SSL-TLS.md",
+    "Network/REST-API.md",
+    "Network/OSI7Layer.md",
+    "Network/LoadBalancing.md",
+    "Network/Intro_HTTP.md",
+    "Network/HTTP-HTTPS.md",
+    "Network/HTTP, IP, DNS.md",
+    "Network/DNS.md",
+    "Linux/http_request_message.md",
+    "Linux/Signal.md",
+    "DB/View.md",
+    "DB/Key.md",
+    "DB/Between&In.md",
+    "Computer architecture/컴퓨터 구조 목차.md",
+    "Computer architecture/2. 컴퓨터 내부의 데이터 표현.md",
+    "Computer architecture",
+    "Algorithm/백트래킹.md",
+    "Algorithm/img/image.png",
+    "Algorithm/img/image-8.png",
+    "Algorithm/img/image-7.png",
+    "Algorithm/img/image-6.png",
+    "Algorithm/img/image-5.png",
+    "Algorithm/img/image-4.png",
+    "Algorithm/img/image-3.png",
+    "Algorithm/img",
+    "Algorithm/Greedy.md",
+    "Algorithm/DFS&BFS.md",
+    "AWS/Terraform.md",
+    "AWS/SwapMemoryInCloud.md",
+    "AWS/Lambda.md"
   ]
 }
