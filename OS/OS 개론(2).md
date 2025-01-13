@@ -17,7 +17,7 @@ CPU와 I/O device는 동시에 실행될 수 있는데요. 장치 컨트롤러�
 
 하드웨어의 경우 시스템 버스(System bus)를 통해 CPU에 신호를 보냄으로써 인터럽트를 발생시킵니다.
 
-![[Pasted image 20250106112629.png]]
+![](https://csstudy.s3.ap-northeast-2.amazonaws.com/OS%20%EA%B0%9C%EB%A1%A0%282%29%20/%20Pasted%20image%2020250106112629.png)
 
 ### Common Functions of Interrupts
 
@@ -58,7 +58,7 @@ CPU는 테이블에서 찾은 예외 핸들러의 시작 주소로 점프하여,
 
 참고로 system call의 종류는 다음과 같습니다.
 
-![[Pasted image 20250106114208.png|500]]
+![500](https://csstudy.s3.ap-northeast-2.amazonaws.com/OS%20%EA%B0%9C%EB%A1%A0%282%29%20/%20Pasted%20image%2020250106114208.png)
 
 # 2️⃣ Timer
 

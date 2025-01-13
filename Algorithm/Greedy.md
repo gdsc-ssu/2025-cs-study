@@ -6,7 +6,7 @@
 
 ### 간단 예시
 
-![alt text](img/image.png)
+![alt text](https://csstudy.s3.ap-northeast-2.amazonaws.com/Greedy%20/%20image.png)
 
 - 최적해는 5 -> 7 -> 9 이지만
 - 그리디 알고리즘을 사용하면 5 -> 10 -> 4가 선택된다
@@ -16,7 +16,7 @@
 ### 그리디 알고리즘 사용 문제
 
 1. 거스름돈 문제 - 큰 단위가 항상 작은 수의 배수여서 때문에 사용 가능
-   ![alt text](img/image-1.png)
+![alt text](https://csstudy.s3.ap-northeast-2.amazonaws.com/Greedy%20/%20image-1.png)
 
 ### 시간 복잡도
 
@@ -25,13 +25,13 @@
 
 ### 예시 문제 1
 
-![alt text](img/image-2.png)
-![alt text](img/image-3.png)
-![alt text](img/image-4.png)
-![alt text](img/image-5.png)
+![alt text](https://csstudy.s3.ap-northeast-2.amazonaws.com/Greedy%20/%20image-2.png)
+![alt text](https://csstudy.s3.ap-northeast-2.amazonaws.com/Greedy%20/%20image-3.png)
+![alt text](https://csstudy.s3.ap-northeast-2.amazonaws.com/Greedy%20/%20image-4.png)
+![alt text](https://csstudy.s3.ap-northeast-2.amazonaws.com/Greedy%20/%20image-5.png)
 
 ### 예시 문제 2
 
-![alt text](img/image-6.png)
-![alt text](img/image-7.png)
-![alt text](img/image-8.png)
+![alt text](https://csstudy.s3.ap-northeast-2.amazonaws.com/Greedy%20/%20image-6.png)
+![alt text](https://csstudy.s3.ap-northeast-2.amazonaws.com/Greedy%20/%20image-7.png)
+![alt text](https://csstudy.s3.ap-northeast-2.amazonaws.com/Greedy%20/%20image-8.png)

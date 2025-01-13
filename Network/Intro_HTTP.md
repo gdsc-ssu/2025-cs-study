@@ -50,4 +50,4 @@
 
 ## 4. 메시지
 
-![HTTP MSG](ny_http_msg.png)
+![HTTP MSG](https://csstudy.s3.ap-northeast-2.amazonaws.com/Intro_HTTP%20/%20ny_http_msg.png)
