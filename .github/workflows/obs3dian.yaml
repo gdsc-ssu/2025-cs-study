@@ -2,8 +2,6 @@ name: Process Markdown Files with Obs3dian
 
 on:
   push:
-    branches:
-      - main
     paths:
       - "**.md"
 
