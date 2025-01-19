@@ -55,6 +55,7 @@ TCP는 신뢰성을 확보할 때 3-way handshake라는 작업을 진행한다.
 TCP가 연결을 해제할 때는 4-way handshake 과정이 발생한다.
 
 ![TCP4WayHandshake](img/TCP4WayHandshake.png)
+
 1. 먼저 클라이언트가 연결을 닫으려고 할 때 FIN으로 설정된 세그먼트를 보낸다. 그리고 클라이언트는 FIN_WAIT_1 상태로 들어가고 서버의 응답을 기다린다.
 2. 서버는 클라이언트로 ACK라는 승인 세그먼트를 보낸다. 그리고 CLOSE_WAIT 상태에 들어간다. 클라이언트가 세그먼트를 받으면 FIN_WAIT_2 상태에 들어간다.
 3. 서버는 ACK를 보내고 일정 시간 이후에 클라이언트에 FIN이라는 세그먼트를 보낸다.
@@ -93,6 +94,7 @@ TCP가 연결을 해제할 때는 4-way handshake 과정이 발생한다.
 HTTP를 통해 웹 서버에 있는 데이터를 요청하면 어떤 일이 일어날까?
 
 ![DataTransferInTCPIP4Layers](img/DataTransferInTCPIP4Layers.png)
+
 애플리케이션 계층에서 전송계층으로 필자가 보내는 요청(request) 값들이 캡슐화 과정을 거쳐 전달되고, 다시 링크 계층을 통해 해당 서버와 통신을 하고, 해당 서버의 링크 계층으로부터 애플리케이션까지 비캡슐화 과정을 거쳐 데이터가 전송된다.
 
 ### 캡슐화 과정
